@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import Header from "./shared/components/header";
+import Router from "./router/router";
+import Footer from "./shared/components/footer";
+
+const Layout = styled.section`
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Layout>
+        <Header />
+        <Router />
+      </Layout>
+      <Footer />
+    </>
   );
 }
 
