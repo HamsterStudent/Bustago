@@ -27,13 +27,6 @@ const CheckPeriod = styled.section`
     border-radius: 11px;
     background: #000;
   }
-  input,
-  select {
-    height: 35px;
-    border-radius: 19px;
-    border: 1px solid #d9d9d9;
-    background-color: transparent;
-  }
   select {
     width: 15%;
   }
