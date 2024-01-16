@@ -25,7 +25,7 @@ time, mark, audio, video {
   font-weight: 400;
 
   /* font: inherit; */
-  vertical-align: baseline;
+  /* vertical-align: baseline; */
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select:none;
@@ -77,8 +77,19 @@ a {
 p,h1,h2,h3,span{
   transform : rotate(0.04deg);
 }
+input,
+  select {
+    height: 35px;
+    border-radius: 19px;
+    border: 1px solid #d9d9d9;
+    background-color: transparent;
+  }
 `;
-
+declare global {
+  interface Window {
+    naver: any;
+  }
+}
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
