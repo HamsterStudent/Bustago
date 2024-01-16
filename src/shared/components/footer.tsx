@@ -5,6 +5,7 @@ const Wrapper = styled.footer`
   width: 100%;
   height: 342px;
   background: #d9d9d9;
+  margin-top: 100px;
 `;
 
 const Inner = styled.div`
