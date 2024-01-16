@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 const NoticeWrap = styled.div`
-  padding-bottom: 98px;
-
   h2 {
     font: 700 2rem "Inter";
     display: flex;
