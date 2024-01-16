@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { PaddingAround } from "../../shared/style/componentStyle";
 import { useNavigate } from "react-router-dom";
+import { Dialog } from "../../shared/components/dialog";
+import SearchTerminal from "./components/searchTerminal";
+import { useDialog } from "../../shared/hooks/useDialog";
 
 const MainSection = styled.section`
   display: flex;
@@ -184,13 +187,15 @@ const QuickMenu = styled.div`
 export default function Main() {
   const [active, setActive] = useState("편도");
   const navigate = useNavigate();
+  const tabList = ["편도", "왕복"];
+  const { DialogWrapper, openDialog, closeDialog } = useDialog();
+
   const onclick = (e: React.MouseEvent<HTMLDivElement>) => {
     const {
       currentTarget: { textContent },
     } = e;
     setActive(`${textContent}`);
   };
-
   const handleButtonClick = () => {
     // 원하는 경로로 이동
     navigate("/reservation");
@@ -213,27 +218,24 @@ export default function Main() {
         </div>
         <ReservationSearch>
           <TabMenu>
-            <Tab
-              onClick={(e) => {
-                onclick(e);
-              }}
-              className={active === "편도" ? "active" : undefined}
-            >
-              <h2>편도</h2>
-            </Tab>
-            <Tab
-              onClick={(e) => {
-                onclick(e);
-              }}
-              className={active === "왕복" ? "active" : undefined}
-            >
-              <h2>왕복</h2>
-            </Tab>
+            {tabList.map((x) => {
+              return (
+                <Tab
+                  key={x}
+                  onClick={(e) => {
+                    onclick(e);
+                  }}
+                  className={active === x ? "active" : undefined}
+                >
+                  <h2>{x}</h2>
+                </Tab>
+              );
+            })}
           </TabMenu>
           {active === "편도" ? (
             <ReservationInfo>
               <div className="departureArrival">
-                <div>
+                <div onClick={openDialog}>
                   <label htmlFor="">출발지</label>
                   <input type="text" name="" id="" />
                 </div>
@@ -242,18 +244,20 @@ export default function Main() {
                   <input type="text" name="" id="" />
                 </div>
               </div>
-
+              <DialogWrapper>
+                <SearchTerminal />
+              </DialogWrapper>
               <div className="date">
                 <div>
                   <h2>가는날</h2>
                   <select name="" id="">
-                    날짜 선택
+                    <option value="">날짜 선택</option>
                   </select>
                 </div>
                 <div>
                   <h2>오는날</h2>
                   <select name="" id="">
-                    날짜 선택
+                    <option value="">날짜 선택</option>
                   </select>
                 </div>
               </div>
@@ -262,15 +266,21 @@ export default function Main() {
                 <h3>인원수</h3>
                 <div>
                   <p>성인</p>
-                  <select name="" id=""></select>
+                  <select name="" id="">
+                    <option value="">10명</option>
+                  </select>
                 </div>
                 <div>
                   <p>중고생</p>
-                  <select name="" id=""></select>
+                  <select name="" id="">
+                    <option value="">10명</option>
+                  </select>
                 </div>
                 <div>
                   <p>아동</p>
-                  <select name="" id=""></select>
+                  <select name="" id="">
+                    <option value="">10명</option>
+                  </select>
                 </div>
               </div>
               <ReservationBtn onClick={handleButtonClick}>
