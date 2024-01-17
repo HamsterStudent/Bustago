@@ -11,7 +11,7 @@ const Wrapper = styled.footer`
 const Inner = styled.div`
   padding: 0 80px;
   height: 100%;
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

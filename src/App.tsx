@@ -6,7 +6,7 @@ import Footer from "./shared/components/footer";
 
 const Layout = styled.section`
   width: 100%;
-  max-width: 1440px;
+  max-width: 1200px;
   height: 100%;
   margin: 0 auto;
 `;
