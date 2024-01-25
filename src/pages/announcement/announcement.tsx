@@ -45,28 +45,26 @@ export default function Announcement() {
           편리하고 신속한 온라인 고객 서비스를 제공합니다.
         </p>
       </SubTitle>
-      <PaddingAround>
-        <TabMenu>
-          <div
-            onClick={(e) => {
-              onClick(e);
-            }}
-            className={active === "공지사항" ? "active" : undefined}
-          >
-            공지사항
-          </div>
-          <div
-            onClick={(e) => {
-              onClick(e);
-            }}
-            className={active === "FAQ" ? "active" : undefined}
-          >
-            FAQ
-          </div>
-        </TabMenu>
+      <TabMenu>
+        <div
+          onClick={(e) => {
+            onClick(e);
+          }}
+          className={active === "공지사항" ? "active" : undefined}
+        >
+          공지사항
+        </div>
+        <div
+          onClick={(e) => {
+            onClick(e);
+          }}
+          className={active === "FAQ" ? "active" : undefined}
+        >
+          FAQ
+        </div>
+      </TabMenu>
 
-        {active === "공지사항" ? <Notice /> : <FAQ />}
-      </PaddingAround>
+      {active === "공지사항" ? <Notice /> : <FAQ />}
     </div>
   );
 }

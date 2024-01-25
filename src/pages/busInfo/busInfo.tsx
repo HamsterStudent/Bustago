@@ -50,24 +50,22 @@ export default function BusInfo() {
           버스 회사의 정보를 확인하실 수 있습니다.
         </p>
       </SubTitle>
-      <PaddingAround>
-        <TabMenu>
-          {tabInfo.map((x) => {
-            return (
-              <div
-                key={x}
-                onClick={(e) => {
-                  onClick(e);
-                }}
-                className={active === x ? `active` : undefined}
-              >
-                {x}
-              </div>
-            );
-          })}
-        </TabMenu>
-        {active === "버스회사 안내" ? <BusCompanyInfo /> : <TerminalInfo />}
-      </PaddingAround>
+      <TabMenu>
+        {tabInfo.map((x) => {
+          return (
+            <div
+              key={x}
+              onClick={(e) => {
+                onClick(e);
+              }}
+              className={active === x ? `active` : undefined}
+            >
+              {x}
+            </div>
+          );
+        })}
+      </TabMenu>
+      {active === "버스회사 안내" ? <BusCompanyInfo /> : <TerminalInfo />}
     </div>
   );
 }

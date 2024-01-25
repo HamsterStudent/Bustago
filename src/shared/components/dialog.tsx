@@ -34,15 +34,14 @@ const ModalDimmed = styled.div`
 const Modal = styled.div`
   width: 90%;
   max-width: 1125px;
-
   border-radius: 20px;
   overflow: hidden;
   background-color: #fff;
   z-index: 1;
-  padding: 56px;
+  padding: 46px;
   h2 {
-    font: 700 4rem "Inter";
-    margin-bottom: 53px;
+    font: 700 3.6rem/3.6rem "Inter";
+    margin-bottom: 30px;
   }
 `;
 

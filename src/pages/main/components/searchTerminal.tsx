@@ -11,7 +11,7 @@ const TabMenu = styled.div`
 
 const Tab = styled.div`
   width: 50%;
-  height: 49px;
+  height: 40px;
   border-radius: 12px 12px 0px 0px;
   background: #fff;
   display: flex;
@@ -30,6 +30,7 @@ const Notice = styled.div`
   align-items: center;
   border: 1px solid #d9d9d9;
   border-bottom: none;
+  height: 40px;
   svg {
     margin-left: 12px;
   }
@@ -49,21 +50,18 @@ const Notice = styled.div`
 `;
 
 const Reservation = styled.div`
-  padding: 8px 21px;
+  padding: 4px 14px;
   width: 60%;
   div {
     display: flex;
     justify-content: space-between;
-    &:last-child {
-      width: 40%;
-    }
   }
 `;
 
 const Wrapper = styled.div`
   max-width: 1125px;
   h3 {
-    font: 700 2.2rem "Inter";
+    font: 700 1.8rem "Inter";
     margin-bottom: 16px;
   }
 `;
@@ -95,7 +93,7 @@ const DepartureArrival = styled.div`
   display: flex;
   justify-content: space-between;
   section {
-    width: 47%;
+    width: 43%;
   }
 `;
 const Search = styled.div`
@@ -104,7 +102,7 @@ const Search = styled.div`
   justify-content: space-between;
   margin-bottom: 9px;
   input {
-    width: 60%;
+    width: 70%;
   }
   .icon {
     padding: 2%;
@@ -128,7 +126,7 @@ const KeywordList = styled.ul`
 const LocationList = styled.div`
   display: flex;
   width: 100%;
-  height: 293px;
+  height: 193px;
   border: 1px solid #d9d9d9;
   .keyword {
     width: 16%;
@@ -271,7 +269,6 @@ const SearchSecton = ({ sectionName }: { sectionName: string }) => {
                   </span>
                 </p>
               </div>
-              <p>편도, 왕복으로 인터넷 예매 가능합니다.</p>
             </Reservation>
 
             <Reservation>
@@ -300,7 +297,6 @@ const SearchSecton = ({ sectionName }: { sectionName: string }) => {
                   />
                 </svg>
               </p>
-              <p>터미널 매표소에서만 구매 가능합니다.</p>
             </Reservation>
           </Notice>
         )}

@@ -14,36 +14,39 @@ const MainSection = styled.section`
 const InfoSection = styled(MainSection)`
   word-break: keep-all;
   align-items: center;
-  margin-bottom: 184px;
+  margin-bottom: 127px;
   h1 {
-    font: 700 7.3rem/101px "Inter";
+    font: 700 5.5rem/6.3rem "Inter";
+    margin-bottom: 40px;
   }
   p {
-    font: 500 3rem "Inter";
+    font: 500 2.4rem/2.8rem "Inter";
   }
 `;
 
 const ReservationSearch = styled.div`
   max-width: 625px;
   width: 50%;
-  height: 732px;
-  font: 600 2.2rem "Inter";
+  height: 580px;
+  font: 600 1.8rem "Inter";
   p {
-    font: 400 2.2rem "Inter";
+    font: 400 1.6rem "Inter";
   }
 `;
 const ReservationInfo = styled.div`
-  padding: 75px 31px 39px 31px;
+  padding: 33px;
+  box-sizing: border-box;
   border-radius: 0px 0px 30px 30px;
   background: #ebebeb;
+  max-height: 500px;
   .departureArrival {
     label {
-      font: 600 22px "Inter";
+      font: 600 1.8rem "Inter";
     }
     input {
       width: 80%;
-      height: 39px;
-      border-radius: 19.5px;
+      height: 40px;
+      border-radius: 20px;
       background: #fff;
       border: none;
     }
@@ -51,14 +54,14 @@ const ReservationInfo = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 29px;
+      margin-bottom: 15px;
     }
   }
   .date {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 38px 0;
+    padding: 25px 0;
     border-top: solid 0.5px #8f8f8f;
     border-bottom: solid 0.5px #8f8f8f;
     display: flex;
@@ -70,14 +73,14 @@ const ReservationInfo = styled.div`
     }
     select {
       width: 100%;
-      height: 49px;
+      height: 40px;
       border-radius: 7px;
       border: none;
       background: #fff;
     }
   }
   .passengers {
-    margin: 23px auto;
+    margin: 25px auto;
     width: 75%;
     display: flex;
     justify-content: space-between;
@@ -102,20 +105,23 @@ const BasicButton = styled.button`
   background: #000;
   color: #fff;
 `;
-
+const ReservationBtn = styled(BasicButton)`
+  width: 100%;
+  padding: 16px;
+  font: 700 2.4rem "Inter";
+`;
 const QuickBtn = styled(BasicButton)`
   width: 48%;
   padding: 10px;
-  font: 700 20px "Inter";
-`;
-const ReservationBtn = styled(BasicButton)`
-  width: 100%;
-  padding: 19px;
-  font: 700 30px "Inter";
+  font: 700 1.8rem "Inter";
+  &:last-child {
+    background: #aaa;
+  }
 `;
 
 const TabMenu = styled.div`
   width: 100%;
+  max-height: 80px;
   display: flex;
   .active {
     background: #ebebeb;
@@ -124,20 +130,20 @@ const TabMenu = styled.div`
 
 const Tab = styled.div`
   width: 50%;
-  height: 94px;
+  height: 80px;
   border-radius: 30px 30px 0px 0px;
   background: #d9d9d9;
   display: flex;
   justify-content: center;
   align-items: center;
   h2 {
-    font: 700 4rem "Inter";
+    font: 700 3.6rem "Inter";
   }
 `;
 
 const QuickSection = styled(MainSection)`
   margin-bottom: 81px;
-  height: 521px;
+  height: 484px;
   h2 {
     font: 700 4rem "Inter";
   }
@@ -147,30 +153,31 @@ const QuickSection = styled(MainSection)`
 `;
 
 const QuickMenu = styled.div`
-  width: 407px;
+  width: 32%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 30px;
-  padding: 45px;
+  padding: 34px;
   background: #d9d9d9;
+
   p {
     font: 500 1.8rem "Inter";
   }
   &.notice {
     border: 1px solid #c3c3c3;
     background: transparent;
-    font: 400 1.6rem "Inter";
+    font: 400 1.4rem "Inter";
     li {
       color: #757575;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
       word-break: break-all;
-      font: 400 16px "Inter";
+      font: 400 1.6rem "Inter";
       color: #757575;
-      padding: 23px 0;
+      padding: 22px 0;
       border-bottom: solid 0.5px #d9d9d9;
       &:last-child {
         border-bottom: none;
@@ -181,6 +188,15 @@ const QuickMenu = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    p {
+      font: 400 1.2rem "Inter";
+      color: #757575;
+    }
+  }
+  .btnWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 `;
 
@@ -202,7 +218,7 @@ export default function Main() {
   };
 
   return (
-    <PaddingAround>
+    <>
       <InfoSection>
         <div>
           <h1>
@@ -284,13 +300,13 @@ export default function Main() {
                 </div>
               </div>
               <ReservationBtn onClick={handleButtonClick}>
-                승차권 예약
+                승차권 예매
               </ReservationBtn>
             </ReservationInfo>
           ) : (
             <ReservationInfo>
               <ReservationBtn onClick={handleButtonClick}>
-                승차권 예약
+                승차권 예매
               </ReservationBtn>
             </ReservationInfo>
           )}
@@ -303,12 +319,12 @@ export default function Main() {
             <p>더보기 {">"}</p>
           </div>
           <ul>
-            <li>[속보] 민지, 일본 또 가고싶어... 도대체 이게 몇...</li>
-            <li>[속보] 민지, 일본 워홀 못가게 생겨... 너무 슬퍼...</li>
-            <li>명절 승차권은 잡기가 정말 힘들다 어쩌구 저쩌...</li>
-            <li>여기에 거의 편지를 써버리는 사람 어떤가요...?</li>
-            <li>사실 무슨 말을 써야할지 모르겠어서 제 마음을...</li>
-            <li>전해봅니다 하하 진주엄 보고싶어요 하하하하하하</li>
+            <li>[네이버페이] 123월 은행_증권사 시스템 점검 일...</li>
+            <li>[네이버페이] 123월 은행_증권사 시스템 점검 일...</li>
+            <li>[네이버페이] 123월 은행_증권사 시스템 점검 일...</li>
+            <li>[네이버페이] 123월 은행_증권사 시스템 점검 일...</li>
+            <li>[네이버페이] 123월 은행_증권사 시스템 점검 일...</li>
+            <li>[네이버페이] 123월 은행_증권사 시스템 점검 일...</li>
           </ul>
         </QuickMenu>
         <QuickMenu>
@@ -327,12 +343,12 @@ export default function Main() {
             <br />
             이용안내
           </h2>
-          <div className="flexWrap">
+          <div className="btnWrap">
             <QuickBtn>등록하기</QuickBtn>
             <QuickBtn>조회하기</QuickBtn>
           </div>
         </QuickMenu>
       </QuickSection>
-    </PaddingAround>
+    </>
   );
 }

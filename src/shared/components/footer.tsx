@@ -9,17 +9,16 @@ const Wrapper = styled.footer`
 `;
 
 const Inner = styled.div`
-  padding: 0 80px;
   height: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   p {
-    font: 400 1.4rem/2.3rem "Inter";
+    font: 400 1.2rem/2rem "Inter";
   }
   .footerInfo {
-    width: 63%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,7 +29,7 @@ const Inner = styled.div`
       justify-content: space-between;
       margin-bottom: 19px;
       h2 {
-        font: 400 3.3rem "Inter";
+        font: 400 3rem "Inter";
       }
       ul {
         display: flex;
@@ -44,10 +43,11 @@ const Inner = styled.div`
     }
   }
   .service {
+    max-width: 198px;
     margin-top: 58px;
     h2 {
-      font: 600 3rem "Inter";
-      letter-spacing: -0.45px;
+      font: 400 2.4rem "Inter";
+      letter-spacing: -0.36px;
     }
     ul {
       display: flex;

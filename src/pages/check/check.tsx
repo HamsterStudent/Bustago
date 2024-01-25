@@ -57,66 +57,63 @@ export default function Check() {
           영수증 확인이 가능합니다.
         </p>
       </SubTitle>
-      <PaddingAround>
-        <PeriocTabMenu>
-          <div className="tab tabActive">조회기간</div>
-        </PeriocTabMenu>
-        <CheckPeriod>
-          <select name="" id="">
-            <option value="">출발일</option>
-          </select>
-          <input type="text" value={"2024.01.01"} />
-          <input type="text" value={"2024.01.01"} />
-          <button>조회하기</button>
-        </CheckPeriod>
-        <Alert>
-          <p>- 조회기간은 최대 1개월까지 가능합니다.</p>
-          <p>
-            - 예매 내역 확인 불가시 타사예매내역을 클릭하여 예매 내역 확인
-            바랍니다.
-          </p>
-        </Alert>
+      <PeriocTabMenu>
+        <div className="tab tabActive">조회기간</div>
+      </PeriocTabMenu>
+      <CheckPeriod>
+        <select name="" id="">
+          <option value="">출발일</option>
+        </select>
+        <input type="text" value={"2024.01.01"} />
+        <input type="text" value={"2024.01.01"} />
+        <button>조회하기</button>
+      </CheckPeriod>
+      <Alert>
+        <p>- 조회기간은 최대 1개월까지 가능합니다.</p>
+        <p>
+          - 예매 내역 확인 불가시 타사예매내역을 클릭하여 예매 내역 확인
+          바랍니다.
+        </p>
+      </Alert>
 
-        <BusTableWrap>
-          <h2>예매조회</h2>
-          <BusTable>
-            <thead>
-              <tr className="cate">
-                <th>상세보기</th>
-                <th>예매일</th>
-                <th>출발지</th>
-                <th>도착지</th>
-                <th>출발일</th>
-                <th>출발시간</th>
-                <th>등급</th>
-                <th>매수</th>
-                <th>금액</th>
-                <th>예매상태</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <button>상세보기</button>
-                </td>
-                <td>24.01.01</td>
-                <td>소노캄호텔(엠블호텔)</td>
-                <td>대전청사공원(선사유적)K</td>
-                <td>24.01.01</td>
-                <td>13:00</td>
-                <td>프리미엄심야우등(주말)</td>
-                <td>30</td>
-                <td>300,000</td>
-                <td>
-                  <button>예매</button>
-                </td>
-              </tr>
-            </tbody>
-          </BusTable>
-        </BusTableWrap>
-
-        <Notice />
-      </PaddingAround>
+      <BusTableWrap>
+        <h2>예매조회</h2>
+        <BusTable>
+          <thead>
+            <tr className="cate">
+              <th>상세보기</th>
+              <th>예매일</th>
+              <th>출발지</th>
+              <th>도착지</th>
+              <th>출발일</th>
+              <th>출발시간</th>
+              <th>등급</th>
+              <th>매수</th>
+              <th>금액</th>
+              <th>예매상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <button>상세보기</button>
+              </td>
+              <td>24.01.01</td>
+              <td>소노캄호텔(엠블호텔)</td>
+              <td>대전청사공원(선사유적)K</td>
+              <td>24.01.01</td>
+              <td>13:00</td>
+              <td>프리미엄심야우등(주말)</td>
+              <td>30</td>
+              <td>300,000</td>
+              <td>
+                <button>예매</button>
+              </td>
+            </tr>
+          </tbody>
+        </BusTable>
+      </BusTableWrap>
+      <Notice />
     </div>
   );
 }
