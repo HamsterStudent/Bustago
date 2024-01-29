@@ -356,7 +356,6 @@ export default function SearchTerminal() {
 
   return (
     <Wrapper>
-      <h2>터미널 검색</h2>
       <MainTerminal>
         <h3>출발지 주요 터미널</h3>
         <ul>

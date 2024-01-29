@@ -204,7 +204,7 @@ export default function Main() {
   const [active, setActive] = useState("편도");
   const navigate = useNavigate();
   const tabList = ["편도", "왕복"];
-  const { DialogWrapper, openDialog, closeDialog } = useDialog();
+  const { SearchTerminalDialog, openDialog, closeDialog } = useDialog();
 
   const onclick = (e: React.MouseEvent<HTMLDivElement>) => {
     const {
@@ -260,9 +260,9 @@ export default function Main() {
                   <input type="text" name="" id="" />
                 </div>
               </div>
-              <DialogWrapper>
+              <SearchTerminalDialog title={"터미널 검색"}>
                 <SearchTerminal />
-              </DialogWrapper>
+              </SearchTerminalDialog>
               <div className="date">
                 <div>
                   <h2>가는날</h2>

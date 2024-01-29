@@ -1,13 +1,10 @@
 import styled from "styled-components";
 import SubTitle from "../../shared/components/subTitle";
-import {
-  Alert,
-  PaddingAround,
-  PageList,
-  TabMenu,
-} from "../../shared/style/componentStyle";
+import { Alert, PageList, TabMenu } from "../../shared/style/componentStyle";
 import { BusTable } from "../../shared/style/tableStyle";
 import Notice from "../../shared/components/notice";
+import { useDialog } from "../../shared/hooks/useDialog";
+import SelectSeat from "./components/SelectSeat";
 
 const Wrapper = styled.section`
   width: 100%;
@@ -108,6 +105,8 @@ const Result = styled.section`
 `;
 
 export default function Reservation() {
+  const { SelectSeatDialog, openDialog, closeDialog } = useDialog();
+
   return (
     <Wrapper>
       <SubTitle>
@@ -263,7 +262,10 @@ export default function Reservation() {
                 <button>상세보기</button>
               </td>
               <td>
-                <button>좌석선택</button>
+                <button onClick={openDialog}>좌석선택</button>
+                <SelectSeatDialog title="좌석선택">
+                  <SelectSeat />
+                </SelectSeatDialog>
               </td>
             </tr>
           </tbody>
