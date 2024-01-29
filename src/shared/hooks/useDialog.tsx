@@ -3,6 +3,7 @@ import { Dialog } from "../components/dialog";
 
 interface IUseDialog {
   children: ReactNode;
+  title?: string;
 }
 
 export const useDialog = (initialOpen = false) => {
@@ -10,15 +11,33 @@ export const useDialog = (initialOpen = false) => {
   const openDialog = () => setIsOpen(true);
   const closeDialog = () => {
     setIsOpen(false);
-    console.log("ahajksdlk");
   };
 
-  const DialogWrapper = ({ children, ...props }: IUseDialog) => (
+  const SearchTerminalDialog = ({ children, ...props }: IUseDialog) => (
     <Dialog isOpen={isOpen}>
-      <Dialog.Content {...props}>{children}</Dialog.Content>
       <Dialog.Dimmed onClose={closeDialog} />
+      <Dialog.Content {...props}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Dialog.Title>{props.title || null}</Dialog.Title>
+          <Dialog.Close onClose={closeDialog}></Dialog.Close>
+        </div>
+        {children}
+      </Dialog.Content>
     </Dialog>
   );
 
-  return { DialogWrapper, openDialog, closeDialog };
+  const SelectSeatDialog = ({ children, ...props }: IUseDialog) => (
+    <Dialog isOpen={isOpen}>
+      <Dialog.Dimmed onClose={closeDialog} />
+      <Dialog.Content {...props}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Dialog.Title>{props.title || null}</Dialog.Title>
+          <Dialog.Close onClose={closeDialog}></Dialog.Close>
+        </div>
+        {children}
+      </Dialog.Content>
+    </Dialog>
+  );
+
+  return { SearchTerminalDialog, SelectSeatDialog, openDialog, closeDialog };
 };
