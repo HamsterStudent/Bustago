@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { PaddingAround } from "../../shared/style/componentStyle";
 import { useNavigate } from "react-router-dom";
 import { Dialog } from "../../shared/components/dialog";
 import SearchTerminal from "./components/searchTerminal";
 import { useDialog } from "../../shared/hooks/useDialog";
+import { Mobile, PC } from "../../shared/components/responsive";
+import { media } from "../../shared/style/media";
 
 const MainSection = styled.section`
   display: flex;
@@ -26,7 +27,7 @@ const InfoSection = styled(MainSection)`
 
 const ReservationSearch = styled.div`
   max-width: 625px;
-  width: 50%;
+  width: 100%;
   height: 580px;
   font: 600 1.8rem "Inter";
   p {
@@ -143,7 +144,9 @@ const Tab = styled.div`
 
 const QuickSection = styled(MainSection)`
   margin-bottom: 81px;
-  height: 484px;
+  display: flex;
+  flex-wrap: wrap;
+
   h2 {
     font: 700 4rem "Inter";
   }
@@ -154,14 +157,17 @@ const QuickSection = styled(MainSection)`
 
 const QuickMenu = styled.div`
   width: 32%;
-  height: 100%;
+  max-height: 484px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 30px;
   padding: 34px;
   background: #d9d9d9;
-
+  ${media.phone`
+    width: 100%;
+    margin-bottom: 15px;
+  `}
   p {
     font: 500 1.8rem "Inter";
   }
@@ -204,7 +210,7 @@ export default function Main() {
   const [active, setActive] = useState("편도");
   const navigate = useNavigate();
   const tabList = ["편도", "왕복"];
-  const { SearchTerminalDialog, openDialog, closeDialog } = useDialog();
+  const { SearchTerminalDialog, openDialog } = useDialog();
 
   const onclick = (e: React.MouseEvent<HTMLDivElement>) => {
     const {
@@ -220,18 +226,20 @@ export default function Main() {
   return (
     <>
       <InfoSection>
-        <div>
-          <h1>
-            시외버스 예약은
-            <br />
-            언제나 버스타고!
-          </h1>
-          <p>
-            빠르고 간편한 버스타고로 예약하세요!
-            <br /> 이 다음에 부연 설명이 더 <br />
-            추가 되어야 할 것 같다 귀찮군
-          </p>
-        </div>
+        <PC>
+          <div>
+            <h1>
+              시외버스 예약은
+              <br />
+              언제나 버스타고!
+            </h1>
+            <p>
+              빠르고 간편한 버스타고로 예약하세요!
+              <br /> 이 다음에 부연 설명이 더 <br />
+              추가 되어야 할 것 같다 귀찮군
+            </p>
+          </div>
+        </PC>
         <ReservationSearch>
           <TabMenu>
             {tabList.map((x) => {

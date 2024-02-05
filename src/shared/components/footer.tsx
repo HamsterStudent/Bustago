@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { media } from "../style/media";
 
 const Wrapper = styled.footer`
   width: 100%;
-  height: 342px;
+  min-height: 342px;
   background: #d9d9d9;
   margin-top: 100px;
 `;
@@ -28,6 +29,10 @@ const Inner = styled.div`
       display: flex;
       justify-content: space-between;
       margin-bottom: 19px;
+      ${media.phone`
+        display:flex;
+        flex-wrap:wrap;
+      `}
       h2 {
         font: 400 3rem "Inter";
       }
@@ -35,6 +40,9 @@ const Inner = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
+        ${media.phone`
+          display:block;
+        `}
         li {
           font: 600 1.4rem "Inter";
           padding-right: 20px;
@@ -55,6 +63,10 @@ const Inner = styled.div`
       padding-top: 10px;
     }
   }
+  ${media.phone`
+    display:flex;
+    flex-wrap:wrap;
+  `}
 `;
 
 export default function Footer() {

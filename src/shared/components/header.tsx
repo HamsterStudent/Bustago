@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Mobile, PC } from "./responsive";
 
 const HeaderWrap = styled.header`
   margin: 74px 0 98px 0;
@@ -42,20 +43,22 @@ export default function Header() {
       <Logo>
         <Link to={"/"}>BUSTAGO</Link>
       </Logo>
-      <List>
-        <Link to={"/reservation"}>승차권 예매</Link>
-        <Link to={"/check"}>조회/변경/취소</Link>
-        <Link to={"/businfo"}>운행정보</Link>
-        <Link to={"/announcement"}>고객지원</Link>
-      </List>
-      <List className="submenu">
-        <Link to={"/"}>로그인</Link>
-        <Link to={"/"}>회원가입</Link>
-        <Link to={"/"}>마이페이지</Link>
-        <select name="" id="">
-          <option value="">KOR</option>
-        </select>
-      </List>
+      <PC>
+        <List>
+          <Link to={"/reservation"}>승차권 예매</Link>
+          <Link to={"/check"}>조회/변경/취소</Link>
+          <Link to={"/businfo"}>운행정보</Link>
+          <Link to={"/announcement"}>고객지원</Link>
+        </List>
+        <List className="submenu">
+          <Link to={"/"}>로그인</Link>
+          <Link to={"/"}>회원가입</Link>
+          <Link to={"/"}>마이페이지</Link>
+          <select name="" id="">
+            <option value="">KOR</option>
+          </select>
+        </List>
+      </PC>
     </HeaderWrap>
   );
 }
