@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useDialog } from "../../../shared/hooks/useDialog";
+import { Mobile, PC } from "../../../shared/components/responsive";
 const TabMenu = styled.div`
   width: 100%;
   display: flex;
@@ -355,24 +356,44 @@ export default function SearchTerminal() {
   ];
 
   return (
-    <Wrapper>
-      <MainTerminal>
-        <h3>출발지 주요 터미널</h3>
-        <ul>
-          {terminalList.map((x) => {
-            let ham = x.replace(" ", "\n");
-            return (
-              <li key={x}>
-                <p>{ham}</p>
-              </li>
-            );
-          })}
-        </ul>
-      </MainTerminal>
-      <DepartureArrival>
+    <>
+      <PC>
+        <Wrapper>
+          <MainTerminal>
+            <h3>출발지 주요 터미널</h3>
+            <ul>
+              {terminalList.map((x) => {
+                let ham = x.replace(" ", "\n");
+                return (
+                  <li key={x}>
+                    <p>{ham}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </MainTerminal>
+          <DepartureArrival>
+            <SearchSecton sectionName={"출발지"} />
+            <SearchSecton sectionName={"도착지"} />
+          </DepartureArrival>
+        </Wrapper>
+      </PC>
+      <Mobile>
+        <MainTerminal>
+          <h3>출발지 주요 터미널</h3>
+          <ul>
+            {terminalList.map((x) => {
+              let ham = x.replace(" ", "\n");
+              return (
+                <li key={x}>
+                  <p>{ham}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </MainTerminal>
         <SearchSecton sectionName={"출발지"} />
-        <SearchSecton sectionName={"도착지"} />
-      </DepartureArrival>
-    </Wrapper>
+      </Mobile>
+    </>
   );
 }

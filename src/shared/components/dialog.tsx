@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
+import { media } from "../style/media";
 
 interface IDialog {
   children?: ReactNode;
@@ -26,6 +27,16 @@ const Wrap = styled.div`
 const Title = styled.h1`
   font: 700 3.6rem "Inter";
   margin-bottom: 30px;
+  ${media.phone`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    width: 100%;
+    height: 44px;
+    font: 400 1.6rem "Inter";
+    background: #9E9E9E;
+  `}
 `;
 
 const Dimmed = styled.div`
@@ -38,7 +49,18 @@ const Dimmed = styled.div`
 const Close = styled.div`
   width: 22px;
   height: 22px;
-  object-fit: contain;
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+  ${media.phone`
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    object-fit: contain;
+  `}
 `;
 const Content = styled.div`
   width: 90%;
@@ -52,6 +74,12 @@ const Content = styled.div`
     font: 700 3.6rem/3.6rem "Inter";
     margin-bottom: 30px;
   }
+  ${media.phone`
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 0;
+  `}
 `;
 
 const DialogRoot = ({ children, isOpen }: IDialogMainProps) => {
