@@ -25,7 +25,7 @@ const Wrap = styled.div`
 `;
 
 const Title = styled.h1`
-  font: 700 3.6rem "Inter";
+  font: 700 3.6rem "Wanted Sans";
   margin-bottom: 30px;
   ${media.phone`
     display: flex;
@@ -34,7 +34,7 @@ const Title = styled.h1`
     color: #fff;
     width: 100%;
     height: 44px;
-    font: 400 1.6rem "Inter";
+    font: 400 1.6rem "Wanted Sans";
     background: #9E9E9E;
   `}
 `;
@@ -71,7 +71,7 @@ const Content = styled.div`
   z-index: 1;
   padding: 46px;
   h2 {
-    font: 700 3.6rem/3.6rem "Inter";
+    font: 700 3.6rem/3.6rem "Wanted Sans";
     margin-bottom: 30px;
   }
   ${media.phone`

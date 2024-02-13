@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Wrap = styled.div`
   width: 100%;
   h3 {
-    font: 700 1.8rem "Inter";
+    font: 700 1.8rem "Wanted Sans";
   }
 `;
 
@@ -13,7 +13,7 @@ const Title = styled.div`
   justify-content: space-between;
   ul {
     display: flex;
-    font: 400 14px "Inter";
+    font: 400 14px "Wanted Sans";
     li {
       display: flex;
       align-items: center;
@@ -29,7 +29,7 @@ const SeatMap = styled.div`
 
 const Notice = styled.div`
   p {
-    font: 400 1.4rem/2.3rem "Inter";
+    font: 400 1.4rem/2.3rem "Wanted Sans";
   }
 `;
 
@@ -43,7 +43,7 @@ const Next = styled.div`
   align-items: center;
   flex-wrap: wrap;
   div {
-    font: 400 2.4rem "Inter";
+    font: 400 2.4rem "Wanted Sans";
     margin-bottom: 19px;
     span {
       font-weight: 700;
@@ -51,7 +51,7 @@ const Next = styled.div`
   }
   button {
     color: #fff;
-    font: 600 23px "Inter";
+    font: 600 23px "Wanted Sans";
     border: none;
     height: 58px;
     width: 100%;

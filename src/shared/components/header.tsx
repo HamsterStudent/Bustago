@@ -17,11 +17,11 @@ const HeaderWrap = styled.header`
 `;
 
 const Logo = styled.div`
-  font: 400 2.1rem "Inter";
+  font: 400 2.1rem "Wanted Sans";
 `;
 
 const List = styled.div`
-  font: 400 1.6rem "Inter";
+  font: 400 1.6rem "Wanted Sans";
   a {
     padding-left: 54px;
   }
@@ -29,7 +29,7 @@ const List = styled.div`
     margin-left: 15px;
   }
   &.submenu {
-    font: 400 1.2rem "Inter";
+    font: 400 1.2rem "Wanted Sans";
     text-align: end;
     a {
       padding-left: 15px;

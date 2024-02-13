@@ -9,7 +9,7 @@ const TabMenu = styled.div`
   display: flex;
   justify-content: left;
   width: 100%;
-  font: 700 2rem/1.5rem "Inter";
+  font: 700 2rem/1.5rem "Wanted Sans";
   border-bottom: solid 0.5px #c3c3c3;
   padding-bottom: 22px;
   margin-bottom: 40px;

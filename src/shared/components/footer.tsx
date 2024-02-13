@@ -16,7 +16,7 @@ const Inner = styled.div`
   display: flex;
   justify-content: space-between;
   p {
-    font: 400 1.2rem/2rem "Inter";
+    font: 400 1.2rem/2rem "Wanted Sans";
   }
   .footerInfo {
     width: 70%;
@@ -34,7 +34,7 @@ const Inner = styled.div`
         flex-wrap:wrap;
       `}
       h2 {
-        font: 400 3rem "Inter";
+        font: 400 3rem "Wanted Sans";
       }
       ul {
         display: flex;
@@ -44,7 +44,7 @@ const Inner = styled.div`
           display:block;
         `}
         li {
-          font: 600 1.4rem "Inter";
+          font: 600 1.4rem "Wanted Sans";
           padding-right: 20px;
         }
       }
@@ -54,7 +54,7 @@ const Inner = styled.div`
     max-width: 198px;
     margin-top: 58px;
     h2 {
-      font: 400 2.4rem "Inter";
+      font: 400 2.4rem "Wanted Sans";
       letter-spacing: -0.36px;
     }
     ul {

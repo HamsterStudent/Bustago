@@ -13,7 +13,7 @@ const NoticeWrap = styled.div`
     justify-content: space-between;
     align-items: center;
     h2 {
-      font: 700 1.8rem "Inter";
+      font: 700 1.8rem "Wanted Sans";
       display: flex;
       align-items: center;
       margin-top: 38px;
@@ -27,7 +27,7 @@ const NoticeWrap = styled.div`
   }
 
   li {
-    font: 300 1.4rem/1.8rem "Inter";
+    font: 300 1.4rem/1.8rem "Wanted Sans";
     margin-bottom: 10px;
   }
 `;

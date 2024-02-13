@@ -20,7 +20,7 @@ const CheckPeriod = styled.section`
   margin-bottom: 12px;
   button {
     color: #fff;
-    font: 600 23px "Inter";
+    font: 600 23px "Wanted Sans";
     border: none;
     height: 47px;
     width: 20%;
@@ -42,7 +42,7 @@ const PeriocTabMenu = styled(TabMenu)`
 const BusTableWrap = styled.div`
   margin-top: 79px;
   h2 {
-    font: 700 1.8rem "Inter";
+    font: 700 1.8rem "Wanted Sans";
     margin-bottom: 12px;
   }
 `;

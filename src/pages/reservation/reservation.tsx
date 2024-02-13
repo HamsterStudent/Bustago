@@ -22,7 +22,7 @@ const Step = styled.ul`
   justify-content: center;
   height: 40px;
   margin-bottom: 30px;
-  font: 700 1.8rem "Inter";
+  font: 700 1.8rem "Wanted Sans";
   li {
     padding: 0 27px;
     display: flex;
@@ -42,7 +42,7 @@ const InfoTabMenu = styled(TabMenu)`
   width: 30%;
   height: 40px;
   .tab {
-    font: 600 1.8rem "Inter";
+    font: 600 1.8rem "Wanted Sans";
   }
 `;
 
@@ -52,7 +52,7 @@ const ReservationTabMenu = styled(TabMenu)`
   .tab {
     width: 49.8%;
     padding: 16px 26px;
-    font: 700 1.8rem "Inter";
+    font: 700 1.8rem "Wanted Sans";
     display: flex;
     justify-content: space-between;
   }
@@ -64,7 +64,7 @@ const InfoSelect = styled.div`
   padding: 17px 33px 17px 33px;
   margin-bottom: 95px;
   h3 {
-    font: 600 1.8rem "Inter";
+    font: 600 1.8rem "Wanted Sans";
     margin-bottom: 8px;
   }
   .passengers {
@@ -77,7 +77,7 @@ const InfoSelect = styled.div`
     button {
       margin-top: 24px;
       color: #fff;
-      font: 600 23px "Inter";
+      font: 600 23px "Wanted Sans";
       border: none;
       height: 58px;
       width: 100%;

@@ -17,11 +17,11 @@ const InfoSection = styled(MainSection)`
   align-items: center;
   margin-bottom: 127px;
   h1 {
-    font: 700 5.5rem/6.3rem "Inter";
+    font: 700 5.5rem/6.3rem "Wanted Sans";
     margin-bottom: 40px;
   }
   p {
-    font: 500 2.4rem/2.8rem "Inter";
+    font: 500 2.4rem/2.8rem "Wanted Sans";
   }
 `;
 
@@ -29,9 +29,9 @@ const ReservationSearch = styled.div`
   max-width: 625px;
   width: 100%;
   height: 580px;
-  font: 600 1.8rem "Inter";
+  font: 600 1.8rem "Wanted Sans";
   p {
-    font: 400 1.6rem "Inter";
+    font: 400 1.6rem "Wanted Sans";
   }
 `;
 const ReservationInfo = styled.div`
@@ -42,7 +42,7 @@ const ReservationInfo = styled.div`
   max-height: 500px;
   .departureArrival {
     label {
-      font: 600 1.8rem "Inter";
+      font: 600 1.8rem "Wanted Sans";
     }
     input {
       width: 80%;
@@ -109,12 +109,12 @@ const BasicButton = styled.button`
 const ReservationBtn = styled(BasicButton)`
   width: 100%;
   padding: 16px;
-  font: 700 2.4rem "Inter";
+  font: 700 2.4rem "Wanted Sans";
 `;
 const QuickBtn = styled(BasicButton)`
   width: 48%;
   padding: 10px;
-  font: 700 1.8rem "Inter";
+  font: 700 1.8rem "Wanted Sans";
   &:last-child {
     background: #aaa;
   }
@@ -138,7 +138,7 @@ const Tab = styled.div`
   justify-content: center;
   align-items: center;
   h2 {
-    font: 700 3.6rem "Inter";
+    font: 700 3.6rem "Wanted Sans";
   }
 `;
 
@@ -148,10 +148,10 @@ const QuickSection = styled(MainSection)`
   flex-wrap: wrap;
 
   h2 {
-    font: 700 4rem "Inter";
+    font: 700 4rem "Wanted Sans";
   }
   h3 {
-    font: 600 2.5rem "Inter";
+    font: 600 2.5rem "Wanted Sans";
   }
 `;
 
@@ -169,19 +169,19 @@ const QuickMenu = styled.div`
     margin-bottom: 15px;
   `}
   p {
-    font: 500 1.8rem "Inter";
+    font: 500 1.8rem "Wanted Sans";
   }
   &.notice {
     border: 1px solid #c3c3c3;
     background: transparent;
-    font: 400 1.4rem "Inter";
+    font: 400 1.4rem "Wanted Sans";
     li {
       color: #757575;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
       word-break: break-all;
-      font: 400 1.6rem "Inter";
+      font: 400 1.6rem "Wanted Sans";
       color: #757575;
       padding: 22px 0;
       border-bottom: solid 0.5px #d9d9d9;
@@ -195,7 +195,7 @@ const QuickMenu = styled.div`
     justify-content: space-between;
     align-items: center;
     p {
-      font: 400 1.2rem "Inter";
+      font: 400 1.2rem "Wanted Sans";
       color: #757575;
     }
   }

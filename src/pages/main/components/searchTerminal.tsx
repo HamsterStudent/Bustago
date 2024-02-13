@@ -21,7 +21,7 @@ const Tab = styled.div`
   border: 1px solid #d9d9d9;
   border-bottom: none;
   .tabTitle {
-    font: 600 1.6rem "Inter";
+    font: 600 1.6rem "Wanted Sans";
   }
 `;
 
@@ -36,7 +36,7 @@ const Notice = styled.div`
     margin-left: 12px;
   }
   .title {
-    font: 600 1.4rem "Inter";
+    font: 600 1.4rem "Wanted Sans";
   }
 
   p {
@@ -45,7 +45,7 @@ const Notice = styled.div`
     align-items: center;
   }
   span {
-    font: 500 1.3rem "Inter";
+    font: 500 1.3rem "Wanted Sans";
     word-break: keep-all;
   }
 `;
@@ -62,7 +62,7 @@ const Reservation = styled.div`
 const Wrapper = styled.div`
   max-width: 1125px;
   h3 {
-    font: 700 1.8rem "Inter";
+    font: 700 1.8rem "Wanted Sans";
     margin-bottom: 16px;
   }
 `;
@@ -121,7 +121,7 @@ const KeywordList = styled.ul`
     padding: 0.5% 1%;
     border-radius: 50%;
     background-color: #d9d9d9;
-    font: 500 1.4rem "Inter";
+    font: 500 1.4rem "Wanted Sans";
   }
 `;
 const LocationList = styled.div`
@@ -133,11 +133,11 @@ const LocationList = styled.div`
     width: 16%;
     border-right: solid 1px #d9d9d9;
     padding: 8px 19px;
-    font: 500 1.8rem "Inter";
+    font: 500 1.8rem "Wanted Sans";
   }
   ul {
     padding: 14px 19px;
-    font: 500 1.4rem "Inter";
+    font: 500 1.4rem "Wanted Sans";
     overflow-y: scroll;
     scrollbar-width: none;
     li {

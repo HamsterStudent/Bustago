@@ -14,7 +14,7 @@ const TabMenu = styled.div`
   div {
     padding: 15px 23px;
     border-radius: 22px;
-    font: 700 2rem/1.5rem "Inter";
+    font: 700 2rem/1.5rem "Wanted Sans";
     /* word-break: keep-all; */
     overflow: hidden;
     white-space: nowrap;

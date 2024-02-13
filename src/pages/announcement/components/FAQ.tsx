@@ -20,7 +20,7 @@ const FAQTab = styled.ul`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font: 400 1.8rem "Inter";
+    font: 400 1.8rem "Wanted Sans";
     padding: 17px 46px;
     border-radius: 41px;
     &.active {
@@ -36,7 +36,7 @@ const FAQTable = styled(BusTable)`
   border-left: none;
   border-right: none;
   .mark {
-    font: 500 3.3rem "Inter";
+    font: 500 3.3rem "Wanted Sans";
   }
   .mainText {
     text-align: initial;

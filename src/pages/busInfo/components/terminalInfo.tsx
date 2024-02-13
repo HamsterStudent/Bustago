@@ -15,7 +15,7 @@ const SelectLocation = styled.ul`
   li {
     width: 12%;
     height: 44px;
-    font: 600 1.8rem/4.4rem "Inter";
+    font: 600 1.8rem/4.4rem "Wanted Sans";
     color: #fff;
     background-color: #c3c3c3;
     border-radius: 9px;
