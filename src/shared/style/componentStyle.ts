@@ -3,6 +3,16 @@ import styled from "styled-components";
 export const PaddingAround = styled.article`
   padding: 0 80px;
 `;
+export const Layout = styled.section`
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+`;
 
 export const Alert = styled.p`
   font: 400 1.4rem "Inter";
