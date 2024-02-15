@@ -18,7 +18,7 @@ export const useDialog = (initialOpen = false) => {
       <Dialog.Dimmed onClose={closeDialog} />
       <Dialog.Content {...props}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <Dialog.Title>{props.title || null}</Dialog.Title>
+          <Dialog.Title>터미널 검색</Dialog.Title>
           <Dialog.Close onClose={closeDialog}></Dialog.Close>
         </div>
         {children}
