@@ -5,8 +5,9 @@ import { media } from "../style/media";
 const Wrapper = styled.footer`
   width: 100%;
   min-height: 342px;
-  background: #d9d9d9;
+  background: #525252;
   margin-top: 100px;
+  color: #fff;
 `;
 
 const Inner = styled.div`
@@ -75,7 +76,8 @@ export default function Footer() {
       <Inner>
         <div className="footerInfo">
           <div className="bustagoInfo">
-            <h2>BUSTAGO</h2>
+            <img src="assets/logo/yellow.png" />
+
             <ul>
               <li>사업자정보</li>
               <li>개인정보처리방침</li>
