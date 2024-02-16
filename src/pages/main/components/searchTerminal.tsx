@@ -40,7 +40,6 @@ const Notice = styled.div`
   border-radius: 30px 30px 0 0;
   border-bottom: none;
   height: 51px;
-
   .title {
     font: 700 1.8rem "Wanted Sans";
     svg {
@@ -96,6 +95,11 @@ const MainTerminal = styled.div`
     font: 500 1.6rem/2rem "Wanted Sans";
     &:nth-child(-n + 10) {
       margin-bottom: 5px;
+    }
+    &:hover {
+      background-color: #fff5bb;
+      border: solid 2px #ffe453;
+      transition: ease-in-out 0.1s;
     }
   }
 `;
@@ -163,12 +167,22 @@ const LocationList = styled.div`
     font: 500 1.8rem "Wanted Sans";
   }
   ul {
-    padding: 14px 19px;
     font: 500 1.4rem "Wanted Sans";
     overflow-y: scroll;
     scrollbar-width: none;
+    width: 100%;
     li {
-      margin-bottom: 10px;
+      width: 100%;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      padding-left: 19px;
+      transition: ease-in-out 0.1s;
+
+      &:hover {
+        background-color: #fff5bb;
+        transition: ease-in-out 0.1s;
+      }
     }
   }
 `;
@@ -196,6 +210,10 @@ const SearchSecton = ({ sectionName }: { sectionName: string }) => {
       <Search>
         <select name="" id="">
           <option value="">지역 선택</option>
+          <option value="">서울특별시</option>
+          <option value="">인천광역시</option>
+          <option value="">부산광역시</option>
+          <option value="">대전광역시</option>
         </select>
         <div className="inputWrap">
           <input type="text" placeholder="터미널명을 입력해주세요" />
