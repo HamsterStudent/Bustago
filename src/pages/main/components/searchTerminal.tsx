@@ -5,23 +5,30 @@ import { Mobile, PC } from "../../../shared/components/responsive";
 const TabMenu = styled.div`
   width: 100%;
   display: flex;
-  .active {
-    background: #d9d9d9;
-  }
 `;
 
 const Tab = styled.div`
   width: 50%;
-  height: 40px;
-  border-radius: 12px 12px 0px 0px;
-  background: #fff;
+  height: 43px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #d9d9d9;
   border-bottom: none;
+  background: url("assets/icon/tabbg.png") no-repeat;
+  background-size: contain;
   .tabTitle {
     font: 600 1.6rem "Wanted Sans";
+  }
+  &.active {
+    background: url("assets/icon/tabbg-active.png") no-repeat;
+    background-size: contain;
+    span {
+      padding-right: 30px;
+      padding-left: 0;
+    }
+  }
+  span {
+    padding-left: 30px;
   }
 `;
 
@@ -29,30 +36,31 @@ const Notice = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #d9d9d9;
+  border: 2px solid #ffe453;
+  border-radius: 30px 30px 0 0;
   border-bottom: none;
-  height: 40px;
-  svg {
-    margin-left: 12px;
-  }
-  .title {
-    font: 600 1.4rem "Wanted Sans";
-  }
+  height: 51px;
 
+  .title {
+    font: 700 1.8rem "Wanted Sans";
+    svg {
+      margin-left: 20px;
+    }
+  }
   p {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   span {
-    font: 500 1.3rem "Wanted Sans";
+    font: 500 1.4rem "Wanted Sans";
     word-break: keep-all;
+    margin-left: 9px;
   }
 `;
 
 const Reservation = styled.div`
-  padding: 4px 14px;
-  width: 60%;
+  padding: 4px 20px;
   div {
     display: flex;
     justify-content: space-between;
@@ -80,10 +88,12 @@ const MainTerminal = styled.div`
     justify-content: center;
     align-items: center;
     width: 9.5%;
+    max-width: 103px;
     height: 55px;
     word-break: keep-all;
     text-align: center;
-    background-color: #ededed;
+    border: solid 1px #dadada;
+    font: 500 1.6rem/2rem "Wanted Sans";
     &:nth-child(-n + 10) {
       margin-bottom: 5px;
     }
@@ -102,13 +112,27 @@ const Search = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 9px;
-  input {
-    width: 70%;
+  select {
+    width: 28%;
+    padding: 5px 13px;
+    font: 500 1.6rem/1.6rem "Wanted Sans";
   }
-  .icon {
-    padding: 2%;
-    border-radius: 50%;
-    background-color: #d9d9d9;
+  .inputWrap {
+    width: 70%;
+    position: relative;
+    input {
+      width: 100%;
+      padding: 15px;
+      &::placeholder {
+        font: 500 1.6rem/1.6rem "Wanted Sans";
+        color: #dadada;
+      }
+    }
+    .icon {
+      position: absolute;
+      right: 10px;
+      top: 8px;
+    }
   }
 `;
 const KeywordList = styled.ul`
@@ -118,17 +142,20 @@ const KeywordList = styled.ul`
   align-items: center;
   margin-bottom: 16px;
   li {
-    padding: 0.5% 1%;
+    padding: 1% 1.5%;
     border-radius: 50%;
-    background-color: #d9d9d9;
+    background-color: #ffe453;
     font: 500 1.4rem "Wanted Sans";
+    &:first-child {
+      color: #ff8038;
+    }
   }
 `;
 const LocationList = styled.div`
   display: flex;
   width: 100%;
   height: 193px;
-  border: 1px solid #d9d9d9;
+  border: 2px solid #ffe453;
   .keyword {
     width: 16%;
     border-right: solid 1px #d9d9d9;
@@ -170,29 +197,11 @@ const SearchSecton = ({ sectionName }: { sectionName: string }) => {
         <select name="" id="">
           <option value="">지역 선택</option>
         </select>
-        <input type="text" />
-        <div className="icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            fill="none"
-          >
-            <circle
-              cx="7.23005"
-              cy="7.23005"
-              r="6.23005"
-              stroke="#9E9E9E"
-              stroke-width="2"
-            />
-            <path
-              d="M11.4927 12.1485L16.0833 16.7391"
-              stroke="#9E9E9E"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
+        <div className="inputWrap">
+          <input type="text" placeholder="터미널명을 입력해주세요" />
+          <div className="icon">
+            <img src="assets/icon/search.png" alt="검색" />
+          </div>
         </div>
       </Search>
       <KeywordList>
@@ -204,10 +213,14 @@ const SearchSecton = ({ sectionName }: { sectionName: string }) => {
         {sectionName === "출발지" ? (
           <TabMenu>
             <Tab className="active">
-              <p className="tabTitle">인터넷 예매 가능</p>
+              <p className="tabTitle">
+                <span>인터넷 예매 가능</span>
+              </p>
             </Tab>
             <Tab>
-              <p className="tabTitle">인터넷 예매 불가</p>
+              <p className="tabTitle">
+                <span>인터넷 예매 불가</span>
+              </p>
             </Tab>
           </TabMenu>
         ) : (
@@ -218,55 +231,13 @@ const SearchSecton = ({ sectionName }: { sectionName: string }) => {
                 <p>
                   <span>왕복</span>
                   <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="17"
-                      height="18"
-                      viewBox="0 0 17 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M10.5 1L15.5 6.5H1"
-                        stroke="#C3C3C3"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M6 16.5L1 11L15.5 11"
-                        stroke="#C3C3C3"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <img src="assets/icon/round-trip-orange.png" alt="" />
                   </span>
                 </p>
                 <p>
                   <span>편도</span>
                   <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="12"
-                      viewBox="0 0 18 12"
-                      fill="none"
-                    >
-                      <path
-                        d="M1 5.57144L15.2857 5.57144"
-                        stroke="#C3C3C3"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12.4286 1L17 5.57143L12.4286 10.1429"
-                        stroke="#C3C3C3"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <img src="assets/icon/one-way-blue.png" alt="" />
                   </span>
                 </p>
               </div>
@@ -333,26 +304,26 @@ const SearchSecton = ({ sectionName }: { sectionName: string }) => {
 
 export default function SearchTerminal() {
   const terminalList = [
-    "강릉시외(강원)",
-    "강릉시외(강원)",
-    "강릉시외(강원)",
-    "강릉시외(강원)",
-    "강릉시외(강원)",
-    "경주시외(경북)",
-    "경주시외(경북)",
-    "경주시외(경북)",
-    "경주시외(경북)",
-    "경주시외(경북)",
-    "고양종합(경기)",
-    "고양종합(경기)",
-    "고양종합(경기)",
-    "고양종합(경기)",
-    "고양종합(경기)",
-    "광주유스퀘어(광주)",
-    "광주유스퀘어(광주)",
-    "광주유스퀘어(광주)",
-    "광주유스퀘어(광주)",
-    "광주유스퀘어(광주)",
+    "강릉시외\n(강원)",
+    "강릉시외\n(강원)",
+    "강릉시외\n(강원)",
+    "강릉시외\n(강원)",
+    "강릉시외\n(강원)",
+    "경주시외\n(경북)",
+    "경주시외\n(경북)",
+    "경주시외\n(경북)",
+    "경주시외\n(경북)",
+    "경주시외\n(경북)",
+    "고양종합\n(경기)",
+    "고양종합\n(경기)",
+    "고양종합\n(경기)",
+    "고양종합\n(경기)",
+    "고양종합\n(경기)",
+    "광주유스퀘어\n(광주)",
+    "광주유스퀘어\n(광주)",
+    "광주유스퀘어\n(광주)",
+    "광주유스퀘어\n(광주)",
+    "광주유스퀘어\n(광주)",
   ];
 
   return (

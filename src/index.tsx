@@ -79,7 +79,7 @@ p,h1,h2,h3,span{
 }
 input,
   select {
-    height: 35px;
+    height: 40px;
     border-radius: 19px;
     border: 1px solid #d9d9d9;
     background-color: transparent;
