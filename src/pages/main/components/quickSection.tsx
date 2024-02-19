@@ -5,10 +5,9 @@ import { media } from "../../../shared/style/media";
 import { Layout } from "../../../shared/style/componentStyle";
 
 const Wrap = styled(MainSection)`
-  margin-bottom: 81px;
+  margin-bottom: 150px;
   display: flex;
   flex-wrap: wrap;
-
   h2 {
     font: 700 4rem "Wanted Sans";
   }
