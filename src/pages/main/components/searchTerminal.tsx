@@ -371,10 +371,10 @@ export default function SearchTerminal() {
         <MainTerminal>
           <h3>출발지 주요 터미널</h3>
           <ul>
-            {terminalList.map((x) => {
-              let ham = x.replace(" ", "\n");
+            {terminalList.map((terminal) => {
+              let ham = terminal.replace(" ", "\n");
               return (
-                <li key={x}>
+                <li key={terminal}>
                   <p>{ham}</p>
                 </li>
               );
