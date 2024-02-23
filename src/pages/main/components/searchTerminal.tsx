@@ -83,7 +83,9 @@ const MainTerminal = styled.div`
   }
   li {
     border-radius: 10px;
-    display: flex;
+    /* display: flex; */
+    box-sizing: border-box;
+    padding: 5px;
     justify-content: center;
     align-items: center;
     width: 9.5%;
@@ -352,10 +354,13 @@ export default function SearchTerminal() {
             <h3>출발지 주요 터미널</h3>
             <ul>
               {terminalList.map((x) => {
-                let ham = x.replace(" ", "\n");
+                let ham = x.replace(/(?:\r\n|\r|\n)/g, "\n");
+                let lines = ham.split("\n");
                 return (
                   <li key={x}>
-                    <p>{ham}</p>
+                    {lines.map((line, index) => (
+                      <p key={index}>{line}</p>
+                    ))}
                   </li>
                 );
               })}
@@ -371,11 +376,14 @@ export default function SearchTerminal() {
         <MainTerminal>
           <h3>출발지 주요 터미널</h3>
           <ul>
-            {terminalList.map((terminal) => {
-              let ham = terminal.replace(" ", "\n");
+            {terminalList.map((x) => {
+              let ham = x.replace(/(?:\r\n|\r|\n)/g, "\n");
+              let lines = ham.split("\n");
               return (
-                <li key={terminal}>
-                  <p>{ham}</p>
+                <li key={x}>
+                  {lines.map((line, index) => (
+                    <p key={index}>{line}</p>
+                  ))}
                 </li>
               );
             })}
