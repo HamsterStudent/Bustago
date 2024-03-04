@@ -23,7 +23,7 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font-weight: 400;
-
+  color: #1B1B1B;
   /* font: inherit; */
   /* vertical-align: baseline; */
   -webkit-user-select:none;
