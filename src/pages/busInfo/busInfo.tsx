@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import SubTitle from "../../shared/components/subTitle";
 import { BusTable } from "../../shared/style/tableStyle";
-import { PaddingAround, PageList } from "../../shared/style/componentStyle";
+import {
+  Layout,
+  PaddingAround,
+  PageList,
+} from "../../shared/style/componentStyle";
 import styled from "styled-components";
 import BusCompanyInfo from "./components/busCompanyInfo";
 import TerminalInfo from "./components/terminalInfo";
@@ -42,7 +46,7 @@ export default function BusInfo() {
   };
 
   return (
-    <div>
+    <Layout>
       <SubTitle>
         <h1>운행정보</h1>
         <p>
@@ -66,6 +70,6 @@ export default function BusInfo() {
         })}
       </TabMenu>
       {active === "버스회사 안내" ? <BusCompanyInfo /> : <TerminalInfo />}
-    </div>
+    </Layout>
   );
 }

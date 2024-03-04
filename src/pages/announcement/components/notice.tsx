@@ -11,7 +11,7 @@ const FilterResult = styled.div`
 
 export default function Notice() {
   return (
-    <div>
+    <>
       <FilterResult>
         <select name="" id="">
           <option value="">전체</option>
@@ -64,6 +64,6 @@ export default function Notice() {
         <li>7</li>
         <li>8</li>
       </PageList>
-    </div>
+    </>
   );
 }

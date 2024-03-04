@@ -2,11 +2,7 @@ import React from "react";
 import SubTitle from "../../shared/components/subTitle";
 import { BusTable } from "../../shared/style/tableStyle";
 import Notice from "../../shared/components/notice";
-import {
-  Alert,
-  PaddingAround,
-  TabMenu,
-} from "../../shared/style/componentStyle";
+import { Alert, Layout, TabMenu } from "../../shared/style/componentStyle";
 import styled from "styled-components";
 
 const CheckPeriod = styled.section`
@@ -41,6 +37,7 @@ const PeriocTabMenu = styled(TabMenu)`
 
 const BusTableWrap = styled.div`
   margin-top: 79px;
+  width: 100%;
   h2 {
     font: 700 1.8rem "Wanted Sans";
     margin-bottom: 12px;
@@ -49,7 +46,7 @@ const BusTableWrap = styled.div`
 
 export default function Check() {
   return (
-    <div>
+    <Layout>
       <SubTitle>
         <h1>조회/변경/취소</h1>
         <p>
@@ -114,6 +111,6 @@ export default function Check() {
         </BusTable>
       </BusTableWrap>
       <Notice />
-    </div>
+    </Layout>
   );
 }

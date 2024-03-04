@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SubTitle from "../../shared/components/subTitle";
-import { PaddingAround } from "../../shared/style/componentStyle";
+import { Layout, PaddingAround } from "../../shared/style/componentStyle";
 import styled from "styled-components";
 import Notice from "./components/notice";
 import FAQ from "./components/FAQ";
@@ -37,7 +37,7 @@ export default function Announcement() {
     setActive(`${textContent}`);
   };
   return (
-    <div>
+    <Layout>
       <SubTitle>
         <h1>고객지원</h1>
         <p>
@@ -65,6 +65,6 @@ export default function Announcement() {
       </TabMenu>
 
       {active === "공지사항" ? <Notice /> : <FAQ />}
-    </div>
+    </Layout>
   );
 }
