@@ -44,25 +44,7 @@ export default function Notice() {
     <Wrap>
       <NoticeWrap>
         <div className="foldNotice">
-          <h2>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-            >
-              <circle cx="15.8571" cy="16.1428" r="15.8571" fill="#AAAAAA" />
-              <path
-                d="M8.35718 16.4444L13.8354 22L22.3572 12"
-                stroke="white"
-                stroke-width="4"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            인터넷 예매 시 유의사항
-          </h2>
+          <h2>인터넷 예매 시 유의사항</h2>
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -105,25 +87,7 @@ export default function Notice() {
       </NoticeWrap>
       <NoticeWrap>
         <div className="foldNotice">
-          <h2>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-            >
-              <circle cx="15.8571" cy="16.1428" r="15.8571" fill="#AAAAAA" />
-              <path
-                d="M8.35718 16.4444L13.8354 22L22.3572 12"
-                stroke="white"
-                stroke-width="4"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            취소 수수료 및 부도 위약금 안내
-          </h2>
+          <h2>취소 수수료 및 부도 위약금 안내</h2>
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
