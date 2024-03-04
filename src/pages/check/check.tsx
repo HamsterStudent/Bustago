@@ -2,11 +2,16 @@ import React from "react";
 import SubTitle from "../../shared/components/subTitle";
 import { BusTable } from "../../shared/style/tableStyle";
 import Notice from "../../shared/components/notice";
-import { Alert, Layout, TabMenu } from "../../shared/style/componentStyle";
+import {
+  Alert,
+  Layout,
+  PageList,
+  TabMenu,
+} from "../../shared/style/componentStyle";
 import styled from "styled-components";
 
 const CheckPeriod = styled.section`
-  border: 2px solid #d9d9d9;
+  border: 2px solid #ffe453;
   width: 100%;
   height: 84px;
   display: flex;
@@ -14,33 +19,121 @@ const CheckPeriod = styled.section`
   align-items: center;
   padding: 0 26px;
   margin-bottom: 12px;
+  .chooseDateType {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    label {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+      font: 500 1.6rem "Wanted Sans";
+      input[type="radio"] {
+        display: none;
+      }
+      input[type="radio"]:checked + .on {
+        background: url("assets/icon/checked.png") no-repeat;
+        background-size: inherit;
+        background-color: #ff8038;
+        background-position: center;
+        border: none;
+      }
+      .on {
+        width: 22px;
+        height: 22px;
+        border: solid 1.5px #aaaaaa;
+        border-radius: 50%;
+        margin-right: 7px;
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .chooseDate {
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .line {
+      width: 20px;
+      border-top: solid 1px #aaa;
+    }
+    .date {
+      position: relative;
+      width: 45%;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 7px;
+        right: 15px;
+        width: 24px;
+        height: 24px;
+        background: url("assets/icon/calendar.png") no-repeat;
+        background-size: contain;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding-left: 15px;
+      }
+    }
+  }
   button {
     color: #fff;
     font: 600 23px "Wanted Sans";
     border: none;
     height: 47px;
     width: 20%;
-    border-radius: 11px;
-    background: #000;
+    border-radius: 25px;
+    background: #ff8038;
   }
   select {
     width: 15%;
-  }
-  input {
-    width: 25%;
   }
 `;
 
 const PeriocTabMenu = styled(TabMenu)`
   width: 25%;
+  background: url("assets/main/tabActive-mini.png") no-repeat;
 `;
 
 const BusTableWrap = styled.div`
   margin-top: 79px;
   width: 100%;
+
   h2 {
     font: 700 1.8rem "Wanted Sans";
     margin-bottom: 12px;
+  }
+  .type {
+    background-color: #afc7fc;
+    color: #fff;
+    text-align: center;
+    padding: 5px 7px;
+    border-radius: 15px;
+    letter-spacing: -2%;
+    margin-left: 10px;
+    font: 500 1.2rem "Wanted Sans";
+  }
+  .detail {
+    button {
+      background-color: #ff8038;
+      color: #fff;
+      border: none;
+      padding: 5px 8px;
+      border-radius: 5px;
+    }
+  }
+  .reserve {
+    button {
+      background-color: #aaaaaa;
+      color: #fff;
+      border: none;
+      padding: 5px 8px;
+      border-radius: 5px;
+    }
   }
 `;
 
@@ -58,11 +151,40 @@ export default function Check() {
         <div className="tab tabActive">조회기간</div>
       </PeriocTabMenu>
       <CheckPeriod>
-        <select name="" id="">
-          <option value="">출발일</option>
-        </select>
-        <input type="text" value={"2024.01.01"} />
-        <input type="text" value={"2024.01.01"} />
+        <div className="chooseDateType">
+          <label>
+            <input
+              type="radio"
+              name="chooseDateType"
+              id="reserveDate"
+              checked
+              value="예매일"
+            />
+            <span className="on"></span>
+            <span>예매일</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="chooseDateType"
+              id="startDate"
+              value="출발일"
+            />
+            <span className="on"></span>
+            <span>출발일</span>
+          </label>
+        </div>
+        <div className="chooseDate">
+          <div className="date">
+            <input type="text" value={"2024.01.01"} />
+          </div>
+          <div className="line"></div>
+          <div className="date">
+            <input type="text" value={"2024.01.01"} />
+          </div>
+        </div>
+
         <button>조회하기</button>
       </CheckPeriod>
       <Alert>
@@ -77,7 +199,7 @@ export default function Check() {
         <h2>예매조회</h2>
         <BusTable>
           <thead>
-            <tr className="cate">
+            <tr>
               <th>상세보기</th>
               <th>예매일</th>
               <th>출발지</th>
@@ -92,7 +214,7 @@ export default function Check() {
           </thead>
           <tbody>
             <tr>
-              <td>
+              <td className="detail">
                 <button>상세보기</button>
               </td>
               <td>24.01.01</td>
@@ -100,15 +222,45 @@ export default function Check() {
               <td>대전청사공원(선사유적)K</td>
               <td>24.01.01</td>
               <td>13:00</td>
-              <td>프리미엄심야우등(주말)</td>
+              <td>
+                프리미엄심야우등(주말)<span className="type">직통</span>
+              </td>
               <td>30</td>
               <td>300,000</td>
+              <td className="reserve">
+                <button>예매</button>
+              </td>
+            </tr>
+            <tr>
+              <td className="detail">
+                <button>상세보기</button>
+              </td>
+              <td>24.01.01</td>
+              <td>소노캄호텔(엠블호텔)</td>
+              <td>대전청사공원(선사유적)K</td>
+              <td>24.01.01</td>
+              <td>13:00</td>
               <td>
+                프리미엄심야우등(주말)<span className="type">직통</span>
+              </td>
+              <td>30</td>
+              <td>300,000</td>
+              <td className="reserve">
                 <button>예매</button>
               </td>
             </tr>
           </tbody>
         </BusTable>
+        <PageList>
+          <li className="numActive">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+        </PageList>
       </BusTableWrap>
       <Notice />
     </Layout>
