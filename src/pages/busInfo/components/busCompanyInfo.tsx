@@ -1,8 +1,7 @@
 import React from "react";
 import { BusTable } from "../../../shared/style/tableStyle";
-import { PageList } from "../../../shared/style/componentStyle";
+import { PageList, SearchBar } from "../../../shared/style/componentStyle";
 import styled from "styled-components";
-import { SearchBar } from "../style/busInfoStyle";
 
 const FilterResult = styled.div`
   display: flex;

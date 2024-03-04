@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { BusTable } from "../../../shared/style/tableStyle";
-import { PageList } from "../../../shared/style/componentStyle";
-import { SearchBar } from "../style/busInfoStyle";
+import { PageList, SearchBar } from "../../../shared/style/componentStyle";
 
 const TerminalInfoWrap = styled.div`
   width: 100%;
