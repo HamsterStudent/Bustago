@@ -84,6 +84,9 @@ input,
     border: 1px solid #d9d9d9;
     background-color: transparent;
   }
+  input{
+    padding-left: 15px;
+  }
 `;
 declare global {
   interface Window {
