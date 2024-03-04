@@ -24,7 +24,7 @@ export const TabMenu = styled.div`
   height: 49px;
   display: flex;
   .active {
-    background: #ebebeb;
+    /* background: #ebebeb; */
   }
   .tab {
     width: 50%;
@@ -34,11 +34,11 @@ export const TabMenu = styled.div`
     align-items: center;
     font: 600 1.8rem "Inter";
     border-radius: 12px 12px 0px 0px;
-    border: 2px solid #d9d9d9;
+    /* border: 2px solid #d9d9d9; */
     border-bottom: none;
-    background: #fff;
+    /* background: #fff; */
     &.tabActive {
-      background: #d9d9d9;
+      /* background: #d9d9d9; */
     }
   }
 `;
@@ -49,11 +49,11 @@ export const PageList = styled.ul`
   margin: 41px auto;
   display: flex;
   justify-content: space-between;
-  font: 600 1.4rem/2.5rem "Inter";
+  font: 600 1.4rem/2.5rem "Wanted Sans";
   text-align: center;
   .numActive {
     width: 25px;
-    background-color: #d9d9d9;
+    background-color: #ffe453;
     border-radius: 50%;
   }
 `;
