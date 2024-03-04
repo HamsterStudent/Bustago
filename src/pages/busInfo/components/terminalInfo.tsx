@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { BusTable } from "../../../shared/style/tableStyle";
 import { PageList } from "../../../shared/style/componentStyle";
+import { SearchBar } from "../style/busInfoStyle";
 
 const TerminalInfoWrap = styled.div`
   width: 100%;
@@ -15,9 +16,8 @@ const SelectLocation = styled.ul`
   li {
     width: 12%;
     height: 44px;
-    font: 600 1.8rem/4.4rem "Wanted Sans";
-    color: #fff;
-    background-color: #c3c3c3;
+    font: 500 1.8rem/3.9rem "Wanted Sans";
+    border: solid 2px #e5e5e5;
     border-radius: 9px;
     text-align: center;
     overflow: hidden;
@@ -26,6 +26,10 @@ const SelectLocation = styled.ul`
     word-break: break-all;
     &:nth-child(-n + 8) {
       margin-bottom: 0.5%;
+    }
+    &:hover {
+      background-color: #fff5bb;
+      border: solid 2px #ffe453;
     }
   }
 `;
@@ -98,6 +102,9 @@ export default function TerminalInfo() {
           <div>{mapPoint.y}</div>
         </Map>
         <TerminalTableWrap>
+          <SearchBar style={{ marginBottom: "50px" }}>
+            <input type="text" placeholder="회사명을 입력해 주세요" />
+          </SearchBar>
           <TerminalTable>
             <thead>
               <tr>

@@ -2,12 +2,18 @@ import React from "react";
 import { BusTable } from "../../../shared/style/tableStyle";
 import { PageList } from "../../../shared/style/componentStyle";
 import styled from "styled-components";
+import { SearchBar } from "../style/busInfoStyle";
 
 const FilterResult = styled.div`
   display: flex;
   justify-content: space-between;
+  width: 100%;
   margin-bottom: 12px;
+  select {
+    width: 118px;
+  }
 `;
+
 export default function BusCompanyInfo() {
   return (
     <>
@@ -15,7 +21,9 @@ export default function BusCompanyInfo() {
         <select name="" id="">
           <option value="">전체</option>
         </select>
-        <input type="text" placeholder="회사명을 입력해 주세요" />
+        <SearchBar>
+          <input type="text" placeholder="회사명을 입력해 주세요" />
+        </SearchBar>
       </FilterResult>
       <BusTable>
         <thead>

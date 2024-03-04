@@ -12,13 +12,12 @@ import TerminalInfo from "./components/terminalInfo";
 
 const TabMenu = styled.div`
   display: flex;
-  width: 35%;
   height: 44px;
   margin: 32px auto;
   div {
-    padding: 15px 23px;
+    padding: 15px 50px;
     border-radius: 22px;
-    font: 700 2rem/1.5rem "Wanted Sans";
+    font: 500 2rem/1.5rem "Wanted Sans";
     /* word-break: keep-all; */
     overflow: hidden;
     white-space: nowrap;
@@ -29,9 +28,15 @@ const TabMenu = styled.div`
       margin-right: none;
     }
     &.active {
-      background-color: #d9d9d9;
+      background-color: #ffe453;
     }
   }
+`;
+
+const Line = styled.div`
+  width: 100%;
+  border-bottom: solid 1px #797979;
+  margin: 32px auto;
 `;
 
 export default function BusInfo() {
@@ -69,6 +74,7 @@ export default function BusInfo() {
           );
         })}
       </TabMenu>
+      <Line></Line>
       {active === "버스회사 안내" ? <BusCompanyInfo /> : <TerminalInfo />}
     </Layout>
   );
