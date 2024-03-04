@@ -7,25 +7,30 @@ import FAQ from "./components/FAQ";
 
 const TabMenu = styled.div`
   display: flex;
-  justify-content: left;
-  width: 100%;
-  font: 700 2rem/1.5rem "Wanted Sans";
-  border-bottom: solid 0.5px #c3c3c3;
-  padding-bottom: 22px;
-  margin-bottom: 40px;
+  height: 44px;
+  margin: 32px auto;
   div {
-    padding: 0 24px;
-    border-right: solid 1px #c3c3c3;
-    &:first-child {
-      padding-left: 0;
-    }
+    padding: 15px 50px;
+    border-radius: 22px;
+    font: 500 2rem/1.5rem "Wanted Sans";
+    /* word-break: keep-all; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    margin-right: 10px;
     &:last-child {
-      border: none;
+      margin-right: none;
+    }
+    &.active {
+      background-color: #ffe453;
     }
   }
-  .active {
-    font-weight: 700;
-  }
+`;
+const Line = styled.div`
+  width: 100%;
+  border-bottom: solid 1px #797979;
+  margin: 32px auto;
 `;
 
 export default function Announcement() {
@@ -45,6 +50,7 @@ export default function Announcement() {
           편리하고 신속한 온라인 고객 서비스를 제공합니다.
         </p>
       </SubTitle>
+
       <TabMenu>
         <div
           onClick={(e) => {
@@ -63,7 +69,7 @@ export default function Announcement() {
           FAQ
         </div>
       </TabMenu>
-
+      <Line></Line>
       {active === "공지사항" ? <Notice /> : <FAQ />}
     </Layout>
   );

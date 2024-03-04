@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { BusTable } from "../../../shared/style/tableStyle";
-import { PageList } from "../../../shared/style/componentStyle";
+import { PageList, SearchBar } from "../../../shared/style/componentStyle";
 const FilterResult = styled.div`
   display: flex;
   justify-content: space-between;
@@ -13,7 +13,7 @@ const FAQTab = styled.ul`
   display: flex;
   justify-content: space-between;
   height: 49px;
-  background-color: #d9d9d9;
+  border: solid 2px #e5e5e5;
   border-radius: 41px;
   margin-bottom: 61px;
   li {
@@ -21,12 +21,12 @@ const FAQTab = styled.ul`
     justify-content: space-between;
     align-items: center;
     font: 400 1.8rem "Wanted Sans";
-    padding: 17px 46px;
+    padding: 17px 45px;
     border-radius: 41px;
     &.active {
-      background-color: #757575;
+      background-color: #fff5bb;
+      border: solid 2px #ffe453;
       font-weight: 700;
-      color: #fff;
     }
   }
 `;
@@ -37,6 +37,7 @@ const FAQTable = styled(BusTable)`
   border-right: none;
   .mark {
     font: 500 3.3rem "Wanted Sans";
+    color: #ff8038;
   }
   .mainText {
     text-align: initial;
@@ -56,7 +57,9 @@ export default function FAQ() {
         <li>기타</li>
       </FAQTab>
       <FilterResult>
-        <input type="text" placeholder="회사명을 입력해 주세요" />
+        <SearchBar>
+          <input type="text" placeholder="회사명을 입력해 주세요" />
+        </SearchBar>
       </FilterResult>
       <FAQTable>
         <tbody>

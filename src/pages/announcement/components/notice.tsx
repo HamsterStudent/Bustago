@@ -1,12 +1,16 @@
 import React from "react";
-import { PageList } from "../../../shared/style/componentStyle";
+import { PageList, SearchBar } from "../../../shared/style/componentStyle";
 import { BusTable } from "../../../shared/style/tableStyle";
 import styled from "styled-components";
 
 const FilterResult = styled.div`
   display: flex;
   justify-content: space-between;
+  width: 100%;
   margin-bottom: 12px;
+  select {
+    width: 118px;
+  }
 `;
 
 export default function Notice() {
@@ -16,7 +20,9 @@ export default function Notice() {
         <select name="" id="">
           <option value="">전체</option>
         </select>
-        <input type="text" placeholder="회사명을 입력해 주세요" />
+        <SearchBar>
+          <input type="text" placeholder="회사명을 입력해 주세요" />
+        </SearchBar>
       </FilterResult>
       <BusTable>
         <thead>
