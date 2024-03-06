@@ -15,13 +15,13 @@ export const Layout = styled.section`
 `;
 
 export const Alert = styled.p`
-  font: 400 1.4rem "Inter";
+  font: 500 1.4rem "Wanted Sans";
   margin-bottom: 16px;
 `;
 
 export const TabMenu = styled.div`
   width: 100%;
-  height: 49px;
+  height: 47px;
   display: flex;
   .active {
     /* background: #ebebeb; */

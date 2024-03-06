@@ -31,4 +31,32 @@ export const BusTable = styled.table`
   td {
     padding: 13px 0;
   }
+  .type {
+    background-color: #afc7fc;
+    color: #fff;
+    text-align: center;
+    padding: 5px 7px;
+    border-radius: 15px;
+    letter-spacing: -2%;
+    margin-left: 10px;
+    font: 500 1.2rem "Wanted Sans";
+  }
+  .orange {
+    button {
+      background-color: #ff8038;
+      color: #fff;
+      border: none;
+      padding: 5px 8px;
+      border-radius: 5px;
+    }
+  }
+  .grey {
+    button {
+      background-color: #aaaaaa;
+      color: #fff;
+      border: none;
+      padding: 5px 8px;
+      border-radius: 5px;
+    }
+  }
 `;
