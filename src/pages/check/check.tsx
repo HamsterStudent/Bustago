@@ -107,34 +107,6 @@ const BusTableWrap = styled.div`
     font: 700 1.8rem "Wanted Sans";
     margin-bottom: 12px;
   }
-  .type {
-    background-color: #afc7fc;
-    color: #fff;
-    text-align: center;
-    padding: 5px 7px;
-    border-radius: 15px;
-    letter-spacing: -2%;
-    margin-left: 10px;
-    font: 500 1.2rem "Wanted Sans";
-  }
-  .detail {
-    button {
-      background-color: #ff8038;
-      color: #fff;
-      border: none;
-      padding: 5px 8px;
-      border-radius: 5px;
-    }
-  }
-  .reserve {
-    button {
-      background-color: #aaaaaa;
-      color: #fff;
-      border: none;
-      padding: 5px 8px;
-      border-radius: 5px;
-    }
-  }
 `;
 
 export default function Check() {
@@ -214,7 +186,7 @@ export default function Check() {
           </thead>
           <tbody>
             <tr>
-              <td className="detail">
+              <td className="orange">
                 <button>상세보기</button>
               </td>
               <td>24.01.01</td>
@@ -227,12 +199,12 @@ export default function Check() {
               </td>
               <td>30</td>
               <td>300,000</td>
-              <td className="reserve">
+              <td className="grey">
                 <button>예매</button>
               </td>
             </tr>
             <tr>
-              <td className="detail">
+              <td className="orange">
                 <button>상세보기</button>
               </td>
               <td>24.01.01</td>
@@ -245,7 +217,7 @@ export default function Check() {
               </td>
               <td>30</td>
               <td>300,000</td>
-              <td className="reserve">
+              <td className="grey">
                 <button>예매</button>
               </td>
             </tr>
