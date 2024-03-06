@@ -60,7 +60,7 @@ const Next = styled.div`
   }
 `;
 
-export default function SelectSeat() {
+export default function SelectSeat({ onNext }: { onNext: () => void }) {
   return (
     <Wrap>
       <Title>
@@ -120,7 +120,7 @@ export default function SelectSeat() {
           <div>
             <span>2석</span>중 <span>2석</span> 선택
           </div>
-          <button>선택하기</button>
+          <button onClick={onNext}>선택하기</button>
         </Next>
       </div>
     </Wrap>
