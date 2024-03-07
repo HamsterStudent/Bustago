@@ -18,6 +18,9 @@ const HeaderWrap = styled.header`
     border-radius: 3px;
     border: 0.25px solid #000;
   }
+  @media only screen and (max-width: 1200px) {
+    width: 90%;
+  }
 `;
 
 const Logo = styled.div`

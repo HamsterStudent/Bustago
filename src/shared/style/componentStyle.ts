@@ -12,6 +12,9 @@ export const Layout = styled.section`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  @media only screen and (max-width: 1200px) {
+    width: 90%;
+  }
 `;
 
 export const Alert = styled.p`
