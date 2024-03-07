@@ -11,6 +11,12 @@ const Wrap = styled.section`
 
 const InfoWrap = styled.div`
   margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const DepartureWrap = styled.div`
+  width: 49%;
 `;
 
 const ButtonWrap = styled.div`
@@ -18,7 +24,7 @@ const ButtonWrap = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 100px;
+  margin-top: 50px;
   p {
     width: 100%;
     font: 500 1.8rem "Wanted Sans";
@@ -42,15 +48,25 @@ const ButtonWrap = styled.div`
 
 const Departure = styled.div`
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
   align-items: center;
-  width: 230px;
   font: 700 1.8rem "Wanted Sans";
   margin-bottom: 15px;
+  word-break: keep-all;
+  .path {
+    display: flex;
+    div {
+      font: 700 1.8rem "Wanted Sans";
+    }
+  }
   span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
     background-color: #afc7fc;
     color: #fff;
-    text-align: center;
     padding: 5px 10px;
     border-radius: 20px;
     letter-spacing: -2%;
@@ -61,24 +77,43 @@ const Departure = styled.div`
   }
 `;
 
-const InfoTable = styled.table`
+const InfoSection = styled.table`
   width: 100%;
-  border-top: solid 1px;
-  border-bottom: solid 1px;
-  text-align: left;
-  tr {
-    height: 43px;
-    border-bottom: solid 0.5px #797979;
+  background-color: #ededed;
+  border-radius: 20px;
+  ul {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    li {
+      h4 {
+        font: 700 1.6rem "Wanted Sans";
+      }
+      width: 49.5%;
+      display: flex;
+      gap: 15px;
+      word-break: keep-all;
+      font: 500 1.4rem "Wanted Sans";
+      color: #797979;
+      margin-bottom: 10px;
+    }
   }
-  th {
-    background-color: #e5e5e5;
-    border-right: solid 1px;
-    padding-left: 15px;
-    font: 700 1.6rem "Wanted Sans";
-  }
-  td {
-    padding-left: 15px;
-    font: 400 1.4rem "Wanted Sans";
+`;
+
+const OrderInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 500 1.4rem "Wanted Sans";
+  .priceWrap {
+    display: flex;
+    align-items: center;
+    .price {
+      font: 700 2.4rem "Wanted Sans";
+      color: #ff8038;
+      margin-left: 10px;
+    }
   }
 `;
 
@@ -88,102 +123,107 @@ export default function ReservationDetail() {
     <Wrap>
       <h3>예매 정보</h3>
       <InfoWrap>
-        <Departure>
-          <span>가는편</span>
-          <div>동서울</div>
-          <img src="assets/icon/one-way-dotted-active.png" alt="" />
-          <div>동대구</div>
-        </Departure>
-        <InfoTable>
-          <tbody>
-            <tr>
-              <th>버스회사</th>
-              <td>경북고속</td>
-              <th>출발일</th>
-              <td>2024.01.01(월)</td>
-            </tr>
-            <tr>
-              <th>좌석</th>
-              <td>07,08번</td>
-              <th>출발시간</th>
-              <td>11:40</td>
-            </tr>
+        <DepartureWrap>
+          <Departure>
+            <span>가는편</span>
+            <div>
+              <div className="path">
+                <div>대전청사공원(선사유적)K</div>
+                <img src="assets/icon/one-way-dotted-active.png" alt="" />
+                <div>소노캄호텔(엠블호텔)</div>
+              </div>
 
-            <tr>
-              <th>인원</th>
-              <td>2명(성인 1명,중고생 1명)</td>
-              <th>금액</th>
-              <td>33,300원</td>
-            </tr>
-            <tr>
-              <th>거리</th>
-              <td>331km</td>
-              <th>예상 소요시간</th>
-              <td>220분</td>
-            </tr>
-            <tr>
-              <th>상세노선</th>
-              <td>대구북부-강릉-양양-낙산-속초</td>
-            </tr>
-          </tbody>
-        </InfoTable>
-      </InfoWrap>
-      <InfoWrap>
-        <Departure>
-          <span>가는편</span>
-          <div>동서울</div>
-          <img src="assets/icon/one-way-dotted-active.png" alt="" />
-          <div>동대구</div>
-        </Departure>
-        <InfoTable>
-          <tbody>
-            <tr>
-              <th>버스회사</th>
-              <td>경북고속</td>
-              <th>출발일</th>
-              <td>2024.01.01(월)</td>
-            </tr>
-            <tr>
-              <th>좌석</th>
-              <td>07,08번</td>
-              <th>출발시간</th>
-              <td>11:40</td>
-            </tr>
+              <p>2024.01.01(월) 13:00</p>
+            </div>
+          </Departure>
+          <InfoSection>
+            <ul>
+              <li>
+                <h4>인원</h4>
+                <p>성인 2명, 중고생 4명, 아동 10명</p>
+              </li>
+              <li>
+                <h4>좌석</h4>
+                <p>07, 08, 09, 10, 11, 12, 13, 14, 15, 16</p>
+              </li>
+              <li>
+                <h4>버스회사</h4>
+                <p>경북고속</p>
+              </li>
+              <li>
+                <h4>거리</h4>
+                <p>331km</p>
+              </li>
+              <li>
+                <h4>금액</h4>
+                <p>33,300 원</p>
+              </li>
+              <li>
+                <h4>예상 소요시간</h4>
+                <p>220 분</p>
+              </li>
+              <li>
+                <h4>상세노선</h4>
+                <p>동서울-강릉-대전-오산-구미-동대구</p>
+              </li>
+            </ul>
+          </InfoSection>
+        </DepartureWrap>
+        <DepartureWrap>
+          <Departure>
+            <span>가는편</span>
+            <div>
+              <div className="path">
+                <div>대전청사공원(선사유적)K</div>
+                <img src="assets/icon/one-way-dotted-active.png" alt="" />
+                <div>소노캄호텔(엠블호텔)</div>
+              </div>
 
-            <tr>
-              <th>인원</th>
-              <td>2명(성인 1명,중고생 1명)</td>
-              <th>금액</th>
-              <td>33,300원</td>
-            </tr>
-            <tr>
-              <th>거리</th>
-              <td>331km</td>
-              <th>예상 소요시간</th>
-              <td>220분</td>
-            </tr>
-            <tr>
-              <th>상세노선</th>
-              <td>대구북부-강릉-양양-낙산-속초</td>
-            </tr>
-          </tbody>
-        </InfoTable>
+              <p>2024.01.01(월) 13:00</p>
+            </div>
+          </Departure>
+          <InfoSection>
+            <ul>
+              <li>
+                <h4>인원</h4>
+                <p>성인 2명, 중고생 4명, 아동 10명</p>
+              </li>
+              <li>
+                <h4>좌석</h4>
+                <p>07, 08, 09, 10, 11, 12, 13, 14, 15, 16</p>
+              </li>
+              <li>
+                <h4>버스회사</h4>
+                <p>경북고속</p>
+              </li>
+              <li>
+                <h4>거리</h4>
+                <p>331km</p>
+              </li>
+              <li>
+                <h4>금액</h4>
+                <p>33,300 원</p>
+              </li>
+              <li>
+                <h4>예상 소요시간</h4>
+                <p>220 분</p>
+              </li>
+              <li>
+                <h4>상세노선</h4>
+                <p>동서울-강릉-대전-오산-구미-동대구</p>
+              </li>
+            </ul>
+          </InfoSection>
+        </DepartureWrap>
       </InfoWrap>
-      <InfoWrap>
-        <h3>결제 정보</h3>
-        <InfoTable>
-          <tr>
-            <th>인원</th>
-            <td>2명(성인 1명, 중고생 1명)</td>
-          </tr>
-          <tr>
-            <th>매수</th>
-            <td>2매</td>
-            <th>결제금액</th>
-            <td>66,600 원</td>
-          </tr>
-        </InfoTable>
-      </InfoWrap>
+      <h3>결제 정보</h3>
+      <OrderInfo>
+        <p>성인 4명, 중고생 8명, 아동 20명 / 총 30매</p>
+        <div className="priceWrap">
+          <p>결제금액</p>
+          <p className="price">66,600원</p>
+        </div>
+      </OrderInfo>
       <ButtonWrap>
         <p className="notice">위 정보를 확인하셨습니까?</p>
         <button>취소</button>
