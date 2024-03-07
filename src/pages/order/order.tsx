@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout } from "../../shared/style/componentStyle";
 import SubTitle from "../../shared/components/subTitle";
 import { Step } from "../reservation/style/reservationStyle";
 
 export default function Order() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Layout>
       <SubTitle>

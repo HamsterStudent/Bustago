@@ -10,7 +10,7 @@ import { BusTable } from "../../shared/style/tableStyle";
 import Notice from "../../shared/components/notice";
 import { useDialog } from "../../shared/hooks/useDialog";
 import SelectSeat from "./components/SelectSeat";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReservationDetail from "./components/reservationDetail";
 import { Step } from "./style/reservationStyle";
 
@@ -136,6 +136,9 @@ const Result = styled.section`
 export default function Reservation() {
   const { SelectSeatDialog, openDialog } = useDialog();
   const [step, setStep] = useState<"좌석선택" | "예매내역 확인">("좌석선택");
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Layout>
       <Wrapper>
