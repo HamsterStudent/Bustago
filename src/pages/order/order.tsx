@@ -2,6 +2,22 @@ import React, { useEffect } from "react";
 import { Layout } from "../../shared/style/componentStyle";
 import SubTitle from "../../shared/components/subTitle";
 import { Step } from "../reservation/style/reservationStyle";
+import styled from "styled-components";
+
+const PathInfo = styled.div`
+  width: 50%;
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #afc7fc;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    letter-spacing: -2%;
+    font: 500 1.6rem "Wanted Sans";
+  }
+`;
 
 export default function Order() {
   useEffect(() => {
@@ -69,6 +85,47 @@ export default function Order() {
           예매완료
         </li>
       </Step>
+      <div>
+        <div>
+          <h3>예매정보</h3>
+          <div>
+            <PathInfo>
+              <span>가는편</span>
+              <div>
+                <div className="path">
+                  <div>대전청사공원(선사유적)K</div>
+                  <img src="assets/icon/one-way-dotted-active.png" alt="" />
+                  <div>소노캄호텔(엠블호텔)</div>
+                </div>
+                <ul>
+                  <li>
+                    <p>일시</p>
+                    <p>2024.01.01(월), 13:30</p>
+                  </li>
+                  <li>
+                    <p>인원</p>
+                    <p>성인 2명</p>
+                  </li>
+                  <li>
+                    <p>좌석</p>
+                    <p>07,08</p>
+                  </li>
+                </ul>
+                <div>
+                  <p>요금</p>
+                  <p>66,000원</p>
+                </div>
+              </div>
+            </PathInfo>
+          </div>
+        </div>
+        <div>
+          <h3>결제정보</h3>
+        </div>
+        <div>
+          <h3>취소 수수료 및 유의사항</h3>
+        </div>
+      </div>
     </Layout>
   );
 }
